@@ -1,0 +1,40 @@
+#!/bin/bash
+
+GENRE=$1
+
+# find more here: https://www.xatworld.com/radio-search/
+declare -A STATIONS=(\
+  [lofi]="http://hyades.shoutca.st:8043/autodj"\
+  [metal]="http://5.135.154.69:11590"\
+  [thrash]="http://167.114.210.232:8217/stream"\
+  [rock]="http://145.14.14.93:9034/rock"\
+  [rock2]="http://stream.diazol.hu:35200/live"\
+  [techno]="http://5.39.71.159:8750/media"\
+  [chill]="http://185.33.21.112:80/chilloutlounge_128"\
+)
+
+show_help() {
+  echo -e "\nUsage: radio \e[4mSTATION\e[0m\n"
+  echo "Available stations:"
+  for STATION in "${!STATIONS[@]}"
+  do
+    echo "$STATION    ${STATIONS[$STATION]}"
+  done
+  echo ""
+}
+
+if [ "$GENRE" = "help" ]; then
+  show_help
+else
+  case $GENRE in
+    "lofi" | "metal" | "thrash" | "rock" | "rock2" | "techno" | "chill" ) # find a way to do this automatically
+      mplayer -quiet ${STATIONS[$GENRE]}
+    ;;
+
+    *)
+      show_help
+      ;;
+  esac
+fi
+
+
