@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/louis/.npm/npmconf'
+let g:netrw_dirhist_2='/Users/louis/.npm'
+let g:netrw_dirhist_3='/Users/louis/.oh-my-zsh'
+let g:netrw_dirhist_4='/Users/louis'
+let g:netrw_dirhist_5='/Users/louis/.vim'
