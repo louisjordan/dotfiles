@@ -5,6 +5,6 @@
 # install
 
 ```
-git clone git@github.com:louisjordan/config.git ~/git/config
-~/git/config/install.sh
+git clone git@github.com:louisjordan/dotfiles.git ~/git/dotfiles
+~/git/dotfiles/install.sh
 ```
